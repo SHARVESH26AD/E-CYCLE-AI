@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cycle AI | E-Waste Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">↻</span><span>E-CYCLE <b>AI</b></span></a>
+    <nav><a class="active" href="#scanner">Scanner</a><a href="#how">How it works</a><a href="#impact">Impact</a></nav>
+    <span class="status"><i></i> SYSTEM ONLINE</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> SMART E-WASTE IDENTIFICATION</div>
+      <h1>Give electronic waste<br><em>a smarter next life.</em></h1>
+      <p class="hero-copy">Scan discarded electronics, identify their components and understand the safest next step — without unnecessary manual handling.</p>
+      <a class="primary-link" href="#scanner">Open detection lab <span>↘</span></a>
+    </section>
+
+    <section class="workspace" id="scanner">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / LIVE ANALYSIS</div><h2>Detection workspace</h2></div>
+        <div class="live-pill"><i></i> CAMERA / IMAGE INPUT</div>
+      </div>
+
+      <div class="workspace-grid">
+        <div class="preview-card">
+          <div class="card-top"><span>INPUT FEED</span><span class="feed-tag">IMAGE PREVIEW</span></div>
+          <div class="preview-stage" id="previewStage">
+            <div class="empty-state" id="emptyState">
+              <div class="upload-symbol">＋</div>
+              <h3>Drop an e-waste image here</h3>
+              <p>or choose an image from your device</p>
+              <label class="upload-button" for="imageInput">Choose image</label>
+            </div>
+            <img id="previewImage" alt="Uploaded e-waste preview">
+            <canvas id="detectionCanvas"></canvas>
+            <div class="scan-line" id="scanLine"></div>
+            <div class="preview-corner top-left"></div><div class="preview-corner top-right"></div>
+            <div class="preview-corner bottom-left"></div><div class="preview-corner bottom-right"></div>
+          </div>
+          <input type="file" id="imageInput" accept="image/*" hidden>
+          <div class="preview-footer">
+            <span id="fileName">NO IMAGE SELECTED</span>
+            <button class="text-button" id="clearButton" type="button">Clear image</button>
+          </div>
+        </div>
+
+        <div class="results-card">
+          <div class="card-top"><span>YOLO-STYLE DETECTION VIEW</span><span class="demo-tag">DEMO MODE</span></div>
+          <div class="result-status"><span class="status-dot"></span><div><b id="resultTitle">Awaiting image</b><small id="resultSubtitle">Upload an image to begin the demo scan</small></div></div>
+          <div class="detected-item">
+            <div class="item-icon">▦</div>
+            <div class="item-info"><b id="itemName">No component detected</b><span id="itemType">Detection result will appear here</span></div>
+            <span class="confidence" id="confidence">—</span>
+          </div>
+          <div class="spec-title">COMPONENT SPECIFICATIONS</div>
+          <div class="spec-grid">
+            <div><span>Component</span><b id="specComponent">—</b></div>
+            <div><span>Category</span><b id="specCategory">—</b></div>
+            <div><span>Material</span><b id="specMaterial">—</b></div>
+            <div><span>Recovery</span><b id="specRecovery">—</b></div>
+          </div>
+          <div class="decision" id="decisionBox">
+            <span class="decision-icon">!</span><div><b>Awaiting classification</b><p>Upload an image to view a sample sorting recommendation.</p></div>
+          </div>
+          <button class="scan-button" id="scanButton" type="button" disabled>Run demo detection <span>→</span></button>
+          <p class="disclaimer">Prototype preview only. This demo uses sample classifications, not a trained YOLO model.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="eyebrow">02 / PROCESS</div><h2>From image to action.</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Capture</h3><p>Upload a photo of an electronic item or component.</p></article>
+        <article><span>02</span><h3>Identify</h3><p>The prototype displays a sample object detection result and component details.</p></article>
+        <article><span>03</span><h3>Sort safely</h3><p>Use the suggested category to guide safe handling and responsible recycling.</p></article>
+      </div>
+    </section>
+
+    <section class="impact" id="impact">
+      <div><div class="eyebrow">03 / PROJECT GOAL</div><h2>Less direct handling.<br><em>More responsible recovery.</em></h2></div>
+      <p>E-Cycle AI explores how camera-based identification can support e-waste sorting, improve awareness of recoverable materials and reduce unnecessary contact with potentially hazardous components.</p>
+    </section>
+  </main>
+  <footer><span>E-CYCLE AI</span><span>STUDENT PROTOTYPE · 2026</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
